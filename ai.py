@@ -9,18 +9,20 @@ if __name__ == "__main__":
     conn = sqlite3.connect("database.db")
 
     # Load data from the database into a Pandas DataFrame
-    query = "SELECT * FROM StudentPerformance;"
+    query = "SELECT * FROM StudentPerformance NATURAL JOIN CourseGradeables;"
     data = pd.read_sql_query(query, conn)
-    print(data.columns)
+    print("Data pulled:", data.columns)
 
     # Close the database connection
     conn.close()
 
     # Split data into features and target variable
     target_name = "TimeItTook"
-    x = data.drop(columns=["TimeItTook", "TimeManagementFeedback"])
+    data["AssignmentType"] = data["AssignmentType"].astype("category")
+
+    x = data.drop(columns=["TimeItTook", "TimeManagementFeedback", "DueDate"])
     y = data["TimeItTook"]
-    print(x.columns)
+    print("Train Data:", x.columns)
 
     # Split data into train and test sets
     X_train, X_test, y_train, y_test = train_test_split(
@@ -28,12 +30,12 @@ if __name__ == "__main__":
     )
 
     # Convert data to DMatrix format for XGBoost
-    dtrain = xgb.DMatrix(X_train, label=y_train)
-    dtest = xgb.DMatrix(X_test, label=y_test)
+    dtrain = xgb.DMatrix(X_train, label=y_train, enable_categorical=True)
+    dtest = xgb.DMatrix(X_test, label=y_test, enable_categorical=True)
 
     # Define XGBoost parameters
     params = {
-        "learning_rate": 0.001,
+        "learning_rate": 0.01,
         "eval_metric": "logloss",
     }
 
