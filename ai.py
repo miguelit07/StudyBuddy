@@ -35,12 +35,12 @@ if __name__ == "__main__":
 
     # Define XGBoost parameters
     params = {
-        "learning_rate": 0.01,
-        "eval_metric": "logloss",
+        "learning_rate": 0.1,
+        "eval_metric": "auc",
     }
 
     # Train the XGBoost model
-    num_rounds = 1000
+    num_rounds = 10000
     model = xgb.train(params, dtrain, num_rounds)
 
     # Make predictions on the test set
