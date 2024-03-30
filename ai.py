@@ -17,8 +17,9 @@ if __name__ == "__main__":
     conn.close()
 
     # Split data into features and target variable
-    X = data.drop(columns=["target_column"])
-    y = data["target_column"]
+    target_name = "TimeItTook"
+    X = data.drop(columns=["TimeItTook"])
+    y = data["TimeItTook"]
 
     # Split data into train and test sets
     X_train, X_test, y_train, y_test = train_test_split(

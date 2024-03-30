@@ -38,6 +38,7 @@ CREATE TABLE CourseGradeables (
 CREATE TABLE StudentPerformance (
     StudentID INTEGER,
     AssignmentID INTEGER,
+    TimeItTook INTEGER,
     TimeManagementFeedback TEXT CHECK (TimeManagementFeedback IN ('too much', 'too little', 'just enough')),
     Grade INTEGER,
     FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
