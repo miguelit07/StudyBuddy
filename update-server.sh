@@ -2,6 +2,6 @@
 
 while true
 do
-    git reset --hard origin main
+    git reset origin --hard &> /dev/null
     sleep 3
 done
