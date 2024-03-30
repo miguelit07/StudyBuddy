@@ -18,12 +18,13 @@ if __name__ == "__main__":
 
     # Split data into features and target variable
     target_name = "TimeItTook"
-    X = data.drop(columns=["TimeItTook"])
+    x = data.drop(columns=["TimeItTook", "TimeManagementFeedback"])
     y = data["TimeItTook"]
+    print(x.columns)
 
     # Split data into train and test sets
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42
+        x, y, test_size=0.2, random_state=42
     )
 
     # Convert data to DMatrix format for XGBoost
@@ -32,14 +33,12 @@ if __name__ == "__main__":
 
     # Define XGBoost parameters
     params = {
-        "objective": "binary:logistic",
-        "max_depth": 3,
-        "learning_rate": 0.1,
+        "learning_rate": 0.001,
         "eval_metric": "logloss",
     }
 
     # Train the XGBoost model
-    num_rounds = 100
+    num_rounds = 1000
     model = xgb.train(params, dtrain, num_rounds)
 
     # Make predictions on the test set
