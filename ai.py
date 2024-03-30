@@ -9,8 +9,9 @@ if __name__ == "__main__":
     conn = sqlite3.connect("database.db")
 
     # Load data from the database into a Pandas DataFrame
-    query = "SELECT * FROM student_performance;"
+    query = "SELECT * FROM StudentPerformance;"
     data = pd.read_sql_query(query, conn)
+    print(data.columns)
 
     # Close the database connection
     conn.close()

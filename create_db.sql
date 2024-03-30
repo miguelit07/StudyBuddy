@@ -4,7 +4,6 @@ CREATE TABLE Student (
     Name TEXT
 );
 
-
 -- Create Course table
 CREATE TABLE COURSE (
     CourseID INTEGER PRIMARY KEY,
