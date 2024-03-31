@@ -1,0 +1,45 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f8ff;
+    /* Light blue background */
+    color: #333;
+    /* Dark text for contrast */
+}
+
+h1,
+h2 {
+    color: #007acc;
+    /* Blue shades for headings */
+}
+
+/* Container for your content */
+#courseContainer {
+    background-color: #ffffff;
+    /* White background for the content area */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Styling paragraphs within the courseContainer for clarity */
+#courseContainer p {
+    font-size: 16px;
+    line-height: 1.6;
+    /* More readable line spacing */
+    color: #005792;
+    /* Darker blue for text */
+    border-bottom: 1px solid #e0e0e0;
+    /* Light border for separation */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Last paragraph doesn't need a border at the bottom */
+#courseContainer p:last-child {
+    border-bottom: none;
+}
