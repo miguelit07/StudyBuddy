@@ -1,0 +1,41 @@
+<script>
+// Function to send a POST request to your back end
+function createTestTable() {
+    // Define the request body
+    const requestBody = {
+        transaction: [
+            {
+                query: "SELECT Grade FROM StudentPerformance NATURAL JOIN CourseGradeables NATURAL JOIN Student WHERE StudentID = 1001"
+            }
+        ]
+    };
+
+    // Define the request options
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+    };
+
+    // Make the request to your back end
+    fetch('http://server:8788/production', requestOptions)
+        .then(response => response.json()) // Parse response JSON
+        .then(data => {
+            // Handle the response data
+            console.log(data); // Log the response to the console
+            // Display the response in the 'response' div
+            document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+            // Handle any errors
+            console.error('Error:', error);
+            // Display the error message
+            document.getElementById('response').innerText = 'Error: ' + error.message;
+        });
+}
+
+// Call the function to create the test table when needed
+createTestTable();
+</script>
