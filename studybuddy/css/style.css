@@ -287,6 +287,8 @@
 /*** Team ***/
 .team-item img {
     transition: .5s;
+	padding-left: 10px;
+
 }
 
 .team-item:hover img {
