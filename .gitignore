@@ -1,4 +1,2 @@
-# Ignore databases
-*.db
 env
 _build/pip_packages
