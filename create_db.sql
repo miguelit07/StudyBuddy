@@ -46,6 +46,16 @@ CREATE TABLE StudentPerformance (
     PRIMARY KEY (StudentID, AssignmentID)
 );
 
+CREATE TABLE Predictions (
+    StudentID INTEGER,
+    AssignmentID INTEGER,
+    Prediction INTEGER, -- Minutes
+    DaysInFuture INTEGER, -- Suggested date to do
+    PRIMARY KEY (StudentID, AssignmentID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (AssignmentID) REFERENCES CourseGradeables(AssignmentID)
+);
+
 -- Generate Course Data
 INSERT INTO Course VALUES(2000,'Intro to Computers','Professor Smith');
 INSERT INTO Course VALUES(2001,'Impacts of AI','Professor Davis');
