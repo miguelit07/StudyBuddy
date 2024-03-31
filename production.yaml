@@ -1,7 +1,2 @@
 readOnly: true
 corsOrigin: "*"
-auth:
-  mode: INLINE
-  byCredentials:
-    - user: client
-      password: password
