@@ -9,5 +9,11 @@ services:
       - "8788:12321"
     volumes:
       - /mnt/DockerHome/myDir:/data
+      - type: bind
+        source: ./production.db
+        target: /production.db
+      - type: bind
+        source: ./production.yml
+        target: /production.yml
     user: "1000:1001"
-    command: --db ./production.db
+    command: --db /production.db
