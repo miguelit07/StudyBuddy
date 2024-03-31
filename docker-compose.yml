@@ -15,5 +15,4 @@ services:
       - type: bind
         source: ./production.yaml
         target: /production.yaml
-    user: "1000:1001"
     command: --db /production.db
