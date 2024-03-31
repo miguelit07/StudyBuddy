@@ -7,11 +7,13 @@ from sklearn.metrics import accuracy_score
 if __name__ == "__main__":
     # Connect to the SQLite database
     conn = sqlite3.connect("database.db")
+    # conn = sqlite3.connect("production.db")
 
     # Load data from the database into a Pandas DataFrame
-    query = "SELECT * FROM StudentPerformance NATURAL JOIN CourseGradeables;"
+    query = "SELECT * FROM StudentPerformance NATURAL JOIN CourseGradeables NATURAL JOIN Student WHERE Grade>=90;"
     data = pd.read_sql_query(query, conn)
     print("Data pulled:", data.columns)
+    print("Num pulled:", len(data))
 
     # Close the database connection
     conn.close()
@@ -19,8 +21,16 @@ if __name__ == "__main__":
     # Split data into features and target variable
     target_name = "TimeItTook"
     data["AssignmentType"] = data["AssignmentType"].astype("category")
+    data["Name"] = data["Name"].astype("category")
 
-    x = data.drop(columns=["TimeItTook", "TimeManagementFeedback", "DueDate"])
+    x = data.drop(
+        columns=[
+            "Name",
+            "TimeItTook",
+            "TimeManagementFeedback",
+            "DueDate",
+        ]
+    )
     y = data["TimeItTook"]
     print("Train Data:", x.columns)
 
@@ -50,3 +60,5 @@ if __name__ == "__main__":
     # Evaluate model accuracy
     accuracy = accuracy_score(y_test, predictions)
     print("Accuracy: %.2f%%" % (accuracy * 100.0))
+
+    conn.
