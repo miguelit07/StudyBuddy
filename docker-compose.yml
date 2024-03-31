@@ -7,6 +7,8 @@ services:
     restart: unless-stopped
     ports:
       - "8788:12321"
+    environment:
+      - ALLOWED_ORIGIN="*"
     volumes:
       - /mnt/DockerHome/myDir:/data
       - ./production.db:/production.db
