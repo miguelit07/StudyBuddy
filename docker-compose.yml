@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ws4sqlite:
+    image: germanorizzo/ws4sqlite:latest
+    container_name: ws4sqlite
+    restart: unless-stopped
+    ports:
+      - "8788:12321"
+    volumes:
+      - /mnt/DockerHome/myDir:/data
+    user: "1000:1001"
+    command: --db /data/testDb.db
