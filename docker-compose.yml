@@ -10,4 +10,4 @@ services:
     volumes:
       - /mnt/DockerHome/myDir:/data
     user: "1000:1001"
-    command: --db /data/testDb.db
+    command: --db ./production.db
