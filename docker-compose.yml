@@ -12,4 +12,4 @@ services:
       - /mnt/DockerHome/myDir:/data
       - ./production.db:/production.db
       - ./production.yaml:/production.yaml
-    command: --db /production.db --bind-host studybuddydb.camerondugan.com
+    command: --db /production.db
