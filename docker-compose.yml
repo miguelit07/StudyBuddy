@@ -9,10 +9,6 @@ services:
       - "8788:12321"
     volumes:
       - /mnt/DockerHome/myDir:/data
-      - type: bind
-        source: ./production.db
-        target: /production.db
-      - type: bind
-        source: ./production.yaml
-        target: /production.yaml
+      - ./production.db:/production.db
+      - ./production.yaml:/production.yaml
     command: --db /production.db
