@@ -13,7 +13,7 @@ services:
         source: ./production.db
         target: /production.db
       - type: bind
-        source: ./production.yml
-        target: /production.yml
+        source: ./production.yaml
+        target: /production.yaml
     user: "1000:1001"
     command: --db /production.db
