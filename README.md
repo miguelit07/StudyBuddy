@@ -6,7 +6,7 @@ This project was created for the InnovAIte Hackathon, hosted by Northeastern Uni
 
 My role was to work on the front end of our application. I utilized HTML, CSS, and JS to create a clean, appealing website that represented our vision for StudyBuddy. Collaborating with teammates working on the back end, I developed an efficient user experience incorporating our ideas/features.
 
-I also lead the presentation of our project to judges, summarizing our ideas and highlighting key features. 
+I also lead the creation and lead presentation of our project to judges, summarizing our ideas and highlighting key features. 
 
 [View PDF](Study-Buddy-project-InnovAIte-Hackathon.pdf)
 
