@@ -8,5 +8,5 @@ My role was to work on the front end of our application. I utilized HTML, CSS, a
 
 I also lead the presentation of our project to judges, summarizing our ideas and highlighting key features. 
 
-[View PDF(Study Buddy project InnovAIte Hackathon.pdf)
+[View PDF](Study Buddy project InnovAIte Hackathon.pdf)
 
