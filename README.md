@@ -1,6 +1,6 @@
 Team8InnovAIteHackathon: StudyBuddy
 
-Website Link: https://camerondugan.github.io/Team8InnovAIteHackathon
+Website Link: https://miguelit07.github.io/StudyBuddy/
 
 This project was created for the InnovAIte Hackathon, hosted by Northeastern University's AI club. This hackathon's assignment was to solve an issue in the education system utilizing AI. Across two days, my group and I collaborated to create the application "StudyBuddy". Our objective with StudyBuddy was to incorporate AI to assist students in organizing their schoolwork, curating study materials, and improving their overall learning experience with tailored support. 
 
